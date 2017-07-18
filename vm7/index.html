@@ -1,0 +1,76 @@
+<HTML>
+
+    <HEAD>
+        <TITLE>Overview - <condata source="databus" key="SystemDescription" /></TITLE>
+    </HEAD>
+
+    <BODY>
+
+        <h2><condata source="databus" key="SystemName" /></h2>
+        <hr>
+        &nbsp;<br>
+
+        <b>Status: Operational</b><br>
+        &nbsp;<br>
+        <table border="0">
+            <tr>
+
+                <td style="width:300px;" align="right"><b>Description:</b></td>
+                <td><condata source="databus" key="SystemDescription" /></td>
+
+            </tr>
+            <tr>
+
+                <td style="width:300px;" align="right"><b>Device ID:</b></td>
+                <td><condata source="databus" key="DeviceID" /></td>
+
+            </tr>
+            <tr>
+
+                <td style="width:300px;" align="right"><b>Vendor:</b></td>
+                <td><condata source="databus" key="Vendor" /></td>
+
+            </tr>
+            <tr>
+
+                <td style="width:300px;" align="right"><b>Application Software Version:</b></td>
+                <td><condata source="databus" key="AppSoftware" /></td>
+
+            </tr>
+            <tr>
+
+                <td style="width:300px;" align="right"><b>Firmware Revision:</b></td>
+                <td><condata source="databus" key="Firmware" /></td>
+
+            </tr>
+            <tr>
+
+                <td style="width:300px;" align="right"><b>Location:</b></td>
+                <td><condata source="databus" key="sysLocation" /></td>
+
+            </tr>
+            <tr>
+
+                <td style="width:300px;" align="right"><b>Current time:</b></td>
+                <td><condata source="eval" key="time.strftime('%H:%M:%S', time.localtime())" /></td>
+
+            </tr>
+
+            <tr>
+
+                <td style="width:300px;" align="right"><b>System uptime:</b></td>
+                <td><condata source="databus" key="Uptime" /> timeticks (deciseconds)</td>
+
+            </tr>
+
+            <tr>
+
+                <td style="width:300px;" align="right"><b>Contact:</b></td>
+                <td><condata source="databus" key="sysContact" /> </td>
+
+            </tr>
+        </table>
+
+    </BODY>
+
+</HTML>

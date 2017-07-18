@@ -1,0 +1,55 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="bacnet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="device_info">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="device_name"/>
+              <xs:element type="xs:int" name="device_identifier"/>
+              <xs:element type="xs:string" name="location"/>
+              <xs:element type="xs:string" name="vendor_name"/>
+              <xs:element type="xs:short" name="vendor_identifier"/>
+              <xs:element type="xs:short" name="max_apdu_length_accepted"/>
+              <xs:element type="xs:string" name="segmentation_supported"/>
+              <xs:element type="xs:string" name="application_software_version"/>
+              <xs:element type="xs:string" name="model_name"/>
+              <xs:element type="xs:string" name="firmware_revision"/>
+              <xs:element type="xs:string" name="description"/>
+              <xs:element type="xs:string" name="system_status"/>
+              <xs:element type="xs:long" name="protocol_services_supported"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="object_list">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="object" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="properties">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:short" name="object_identifier"/>
+                          <xs:element type="xs:string" name="object_type"/>
+                          <xs:element type="xs:float" name="present_value" minOccurs="0"/>
+                          <xs:element type="xs:string" name="units" minOccurs="0"/>
+                          <xs:element type="xs:string" name="active_text" minOccurs="0"/>
+                          <xs:element type="xs:string" name="inactive_text" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="enabled"/>
+      <xs:attribute type="xs:string" name="host"/>
+      <xs:attribute type="xs:int" name="port"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
